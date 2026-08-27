@@ -48,7 +48,7 @@
     padding-right:150px;
 }
 #content{
-    line-height: 1.8rem;;
+    line-height: 1.8rem;
 }
 #Hlo{
     font-size:1.8rem;
@@ -302,7 +302,7 @@ hr{
 
 .project{
     display:flex;
-    height:320px;;
+    height:345px;
     justify-content:space-around;
     justify-content:center;
     
@@ -322,9 +322,10 @@ hr{
 }
 
 .proj-img{
-    background-image: url("img3.png");
+    background-image: url("image.png");
     height:40%;
     background-size:cover;
+    
 }
 
 .proj-content h3{
@@ -364,6 +365,14 @@ hr{
     text-align: center;
     padding-top:1px;
 }
+.t3{
+    margin-right:15px;
+    background-color:cornsilk;
+    border: 2px solid whitesmoke;
+    border-radius:15%;
+    text-align: center;
+    padding-top:1px;
+}
 
 .proj-content a{
     text-decoration:none;
@@ -383,4 +392,81 @@ hr{
     justify-content:space-evenly;
     align-items:center;
     width:100%;
+}
+
+/*contact*/
+.contact-main{
+    display:flex;
+    justify-content: space-around;
+   
+    gap:3rem;
+    width:100%;
+   
+    
+
+}
+.contact-info{
+    line-height: 2.4rem;
+    font-size:1.1rem;
+    
+   
+    
+    
+}
+.contact-info ul{
+    list-style:none;
+    margin-right:1.4rem;
+   
+}
+.contact-info i{
+    margin-right:1rem;
+   
+}
+
+/* form{
+    
+} */
+/* .contact-box{
+   
+} */
+.name-mail{
+    display: flex;
+    width:100%;
+    
+    height:100%;
+   
+}
+.namemail input{
+    height:30px;
+    width:450px;
+    text-align: center;
+}
+
+.sub input{
+    height:30px;
+    width:100%;
+    text-align: center;
+
+}
+
+.mailmessage input{
+    height:130px;
+    text-align: center;
+    width:100%;
+}
+
+.conbutton{
+    
+    width:100%;
+    display:flex;
+    justify-content:center;
+    
+}
+.conbutton button{
+    background-color: chocolate;
+    color:white;
+    height:35px;
+    width:120px;
+    margin-top:15px;
+    margin-bottom:15px;
 }
