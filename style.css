@@ -74,6 +74,7 @@
 .action{
     display:flex;
     align-items:center;
+    font-size:1.2rem;
 }
 
 .view{
@@ -469,4 +470,31 @@ hr{
     width:120px;
     margin-top:15px;
     margin-bottom:15px;
+}
+/*achievement*/
+.achievement{
+    display:flex;
+    height:100px;
+    justify-content:space-around;
+    justify-content:center;
+    align-items:center;
+}
+.ach{
+    height:50px;
+    width:180px;
+    background-color:whitesmoke;
+    border-radius:15%;
+    margin-right:25px;
+    padding:10px 20px 5px 25px;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+}
+
+.ach i{
+    border-radius: 1rem;
+    display:flex;
+    align-items: center;
+    background-color:whitesmoke;
+    margin-right:1rem;
 }
