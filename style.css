@@ -4,6 +4,19 @@
 
 }
 
+.dark{
+    background-color: black;
+    color:white;
+}
+
+.copyEmail{
+    background-color: transparent;
+    border:1px solid #333;
+    margin-left:.7rem;
+    border-radius:1rem;
+    width:3rem;
+}
+
 .navbar{
     height:75px;
     display:flex;

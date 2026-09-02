@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>portfolio</title>
 </head>
-<body>
-    <script src="first.js"></script>
+<body >
     <!--Nav bar-->
+    <header>
     <div class="navbar">
         <p id="name">Rajendra</p>
         <a href="#">Home</a>
@@ -21,6 +21,7 @@
         <a href="#">Certificates</a>
         <a href="#">Achievements</a>
         <a href="#">Contacts</a>
+        <button id="theme">🌙</button>
     </div>
 <!--hero-->
     <div class="hero">
@@ -53,6 +54,7 @@
             
         </div>
     </div>
+    </header>
 
     <!--About me-->
     <p class="aboutme ">ABOUT ME</p>
@@ -71,7 +73,7 @@
                
                 <li><pre>Date of birth     : 22 May 2006</pre> </li>
                 <li> <pre>Location           : Haliyal,uttara Kannada,Karnataka</pre></li>
-                <li> <pre>Email                : <a href="https://mail.google.com/mail/u/0/#inbox" target="main">rajendramadival7@gmail.com</a></pre> </li>
+                <li> <pre>Email                : <a href="https://mail.google.com/mail/u/0/#inbox" target="main" class ="email">rajendramadival7@gmail.com</a> <button class="copyEmail">Copy</button></pre>  </li>
                 <li> <pre>Phone               : 7259114950 </pre></li>
                 <li> <pre>Language         : English,Kannada,Marathi</pre></li>
                 
@@ -308,7 +310,7 @@
     <div class="contact-main">
         <div class="contact-info">
             <ul>
-            <li><i class="fa-solid fa-envelope"></i> <a href="https://mail.google.com/mail/u/0/#inbox" target="main">rajendramadival7@gmail.com</a></li>
+            <li><i class="fa-solid fa-envelope"></i> <a href="https://mail.google.com/mail/u/0/#inbox" target="main" class="email">rajendramadival7@gmail.com</a> <button class="copyEmail">Copy</button> </li>
             <li><i class="fa-solid fa-phone"></i> 7259114950</li>
             <li><i class="fa-solid fa-location-dot"></i> Haliyal(U.K),Karnataka,India.</li>
             <li><i class="fa-brands fa-square-github"></i> <a href="https://github.com/Rajendra7250" target="main"> rajendra7250</a></li>
@@ -334,8 +336,9 @@
             <button type="submit">Send Message</button>
     </div>
     <p class="spline"></p>
+    <!-- <button id="backToTop">Top</button> -->
     
-
+    <footer>
     <div class="bottom-navbar">
         <!-- <div class="link">
                 <a href="https://github.com/Rajendra7250" target="main"><i class="fa-brands fa-square-github"></i></a>
@@ -347,5 +350,7 @@
 
         <p>&#169 2026 Rajendra Madival. All rights Preserved </p>
     </div>
+    </footer>
+    <script src="first.js"></script>
 </body>
 </html>
