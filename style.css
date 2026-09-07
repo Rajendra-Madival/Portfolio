@@ -14,6 +14,12 @@
     --border-color: #e5e0d5;
     --card-bg: #f7ede1;         /* your FIFA-card background tone */
     --shadow: rgba(20, 20, 43, 0.08);
+
+    /*for scrolling*/
+    --scrollbar-thumb: #293a56;
+    --scrollbar-track: #86ad86;
+    --selection-bg: #e5ebc2;
+    --link-hover: #5c7be4;
 }
 
 .dark {
@@ -30,15 +36,7 @@
     --accent: #f2a24d;           /* slightly brighter orange for dark bg contrast */
     --accent-hover: #f7b567;
     --accent-light: #2e2416;
-}
-
-:root {
-    --scrollbar-thumb: #293a56;
-    --scrollbar-track: #86ad86;
-    --selection-bg: #e5ebc2;
-    --link-hover: #5c7be4;
-}
-.dark {
+/*for scrolling*/
     --scrollbar-thumb: #4a5d8a;
     --scrollbar-track: #2e2e52;
     --selection-bg: #3a3a6e;
