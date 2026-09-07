@@ -3,6 +3,12 @@
     padding:0;
 
 }
+body:hover {
+    cursor: url("cursor-32.png"), pointer;
+}
+p{
+    text-wrap:pretty;
+}
 
 .dark{
     background-color: black;
@@ -73,6 +79,7 @@
     color:black;
 
 }
+
 #wb{
     font-size:1.8rem;
     color:chocolate;
@@ -163,6 +170,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.hero-image:hover{
+    border: 6px solid chocolate;
 }
 
 /*about*/
@@ -511,3 +521,18 @@ hr{
     background-color:whitesmoke;
     margin-right:1rem;
 }
+
+
+/* .bar{
+    transform-origin: left;
+    animation:fill linear;
+    animation-timeline:scroll();
+    color:blueviolet;
+}
+
+@keyframes fill{
+    from{transform: scalex(0);}
+    to { transform:scaleX(1);}
+} */
+
+

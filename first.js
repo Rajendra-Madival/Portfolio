@@ -2,6 +2,7 @@
 
 const email=document.querySelector(".email");
 const copyButton=document.querySelectorAll(".copyEmail");
+// const top=document.querySelector(".backToTop");
 
 copyButton.forEach(function(button){
     button.addEventListener("click",function(){
@@ -27,3 +28,16 @@ themeButton.addEventListener("click",function(){
 }
     
 });
+
+const submitButton=document.querySelector("#submit");
+
+submitButton.addEventListener("click",function(){
+    alert("Gmail sent!")
+})
+
+/*Top button*/
+// top.addEventListener("scroll",function(){
+//     if(scroll<500){
+//         top.innerText="hell yeah";
+//     }
+// });
