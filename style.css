@@ -6,6 +6,15 @@
 body:hover {
     cursor: url("cursor-32.png"), pointer;
 }
+html{
+    scrollbar-color:#293a56 rgb(134, 173, 134);
+    scrollbar-width:auto;
+    scroll-behavior: smooth;
+}
+/*custom highlight*/
+::selection{
+    background: rgb(229,235,194);
+}
 p{
     text-wrap:pretty;
 }
@@ -52,7 +61,7 @@ p{
 /* hero */
 
 .hero{
-    height:600px;
+    height:550px;
     background-color:cornsilk;
     display:flex;
     
@@ -75,7 +84,7 @@ p{
     
 }
 #name2{
-    font-size:3.5rem;
+    font-size:3.2rem;
     color:black;
 
 }
@@ -155,23 +164,23 @@ p{
 
 
     
-
-
-.hero-image {
-    background-image: url("img1.jpg");
-    background-size: cover;
-    height: 400px;
-    width: 400px;
-    background-color: cornsilk;
-    border: 2px solid white;
-    border-radius: 50%;
-    margin-top: 7%;
-    margin-left: 200px;
+.hero-image{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
-.hero-image:hover{
+
+.hero-image a {
+    background-image: url("hero-image.png");
+    background-size: contain;   
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 280px;
+    height: 425px;   
+    border-radius: 12px;   
+    margin: 4.2rem 0rem 0rem 19rem;
+}
+.hero-image a:hover{
     border: 6px solid chocolate;
 }
 
