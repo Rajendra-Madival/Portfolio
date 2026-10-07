@@ -70,11 +70,12 @@ p{
 }
 
 .copyEmail{
-    background-color: transparent;
+    background-color: var(--bg-secondary);
     border:1px solid var(--border-color);
     margin-left:.7rem;
     border-radius:1rem;
     width:3rem;
+    color:var(--text-primary)
 }
 
 .navbar{
