@@ -4,7 +4,7 @@ A responsive personal portfolio website built with HTML, CSS and JavaScript to s
 
 ## Live Demo
 
-[View Portfolio](https://portfolio-wine-delta-bk46pdo64l.vercel.app/)
+[View Portfolio](https://rajendra-madival.vercel.app/)
 
 ## Overview
 
