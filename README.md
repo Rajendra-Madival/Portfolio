@@ -1,45 +1,32 @@
-# Rajendra Madival — Portfolio
+# React + TypeScript + Vite
 
-A responsive personal portfolio website built with HTML, CSS and JavaScript to showcase my projects, skills, education, achievements and development journey.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Live Demo
+Currently, two official plugins are available:
 
-[View Portfolio](https://rajendra-madival.vercel.app/)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Overview
+## React Compiler
 
-This portfolio was built from scratch to create a personal space for presenting my work and documenting my growth as a Computer Science Engineering student.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-The project focuses on a clean interface, responsive layout and simple interactions without relying on a frontend framework.
+## Expanding the Oxlint configuration
 
-## Features
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
 
-- Responsive portfolio layout
-- Light and dark theme
-- About section
-- Education section
-- Skills and technologies
-- Project showcase
-- Achievements section
-- Contact section
-- Social profile links
-- Copy-to-clipboard email interaction
-- Responsive navigation
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+```
 
-## Tech Stack
-
-- HTML5
-- CSS3
-- JavaScript
-- Font Awesome
-- Google Fonts
-
-## Project Structure
-
-```text
-Portfolio/
-├── index.html
-├── style.css
-├── first.js
-├── images/
-└── README.md
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.

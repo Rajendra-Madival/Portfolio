@@ -1,3 +1,4 @@
+@import "tailwindcss";
 :root {
     /* Brand accent - stays same in both modes */
     --accent: #e08a2e;
