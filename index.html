@@ -1,362 +1,724 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajendra Madival — Portfolio</title>
+  <meta name="description" content="Portfolio of Rajendra Maruti Madival — Computer Science Engineering student, Web Developer, and Problem Solver.">
+  <meta property="og:title" content="Rajendra Madival — Portfolio">
+  <meta property="og:description" content="Computer Science Engineering student, Web Developer, and Problem Solver.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
-<body >
-    <!-- <hr class="bar"> -->
-    <!--Nav bar-->
-    <header>
-    <div class="navbar">
-        <p id="name">Rajendra</p>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Education</a>
-        <a href="#">Skills</a>
-        <a href="#">Projects</a>
-        <a href="#">Experience</a>
-        <a href="#">Certificates</a>
-        <a href="#">Achievements</a>
-        <a href="#">Contact</a>
-        <button id="theme">🌙</button>
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary Navigation">
+      <a href="#home" id="name" class="brand">Rajendra</a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button id="theme" type="button" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+        <button id="menuToggle" type="button" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileNav" class="mobile-nav" hidden>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
     </div>
-<!--hero-->
-    <div class="hero">
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero-section">
+      <div class="container hero">
         <div class="hero-content">
-            <p id="Hlo">Hello, I'm</p>
-          
-            <p id="name2">Rajendra Maruti Madival</p>
-            <p id="wb">CSE Student | Web Developer | Problem Solver.</p>
-            <p id="content">I build responsive web applications and enjoy turning ideas into real, working products.<br> Currently exploring React, backend development, SQL, and problem solving.</p>
-            <div class="action">
-                <div class="view border">
-                    <a href="#">Resume</a>
-                </div> 
-                <div class="Contact border">
-                    <a href="#">Contact Me</a>
+          <p id="Hlo">Hello, I'm</p>
+          <h1 id="name2">Rajendra Maruti Madival</h1>
+          <p id="wb" aria-live="polite">
+            <span id="typedTagline">CSE Student | Web Developer | Problem Solver</span><span class="typed-cursor" aria-hidden="true"></span>
+          </p>
+          <p id="content">
+            I build responsive web applications and end-to-end products with solid fundamentals and modern tools.
+            Currently pursuing B.E. in CSE at KLS VDIT, Haliyal — exploring full-stack engineering, AI integrations, and DSA.
+          </p>
+
+          <div class="action">
+            <button type="button" id="openResumeBtn" class="btn-primary">
+              <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+              <span>View Resume</span>
+            </button>
+            <a href="#contact" class="btn-secondary">Contact Me</a>
+          </div>
+
+          <div class="link" aria-label="Social Links">
+            <a href="https://github.com/Rajendra-Madival" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/rajendra-madival-683334340/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a href="mailto:rajendramadival7@gmail.com" aria-label="Email">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            </a>
+            <a href="https://x.com/Rajendra7250_" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="https://instagram.com/rajendra7250_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive 3D Flip GitFut Card -->
+        <div class="hero-image">
+          <div
+            class="gitfut-card"
+            id="gitfutCard"
+            role="button"
+            tabindex="0"
+            aria-pressed="false"
+            aria-label="Interactive GitFut developer card. Press to flip."
+          >
+            <div class="gitfut-card-inner">
+              <div class="gitfut-face gitfut-front">
+                <img src="/gitfut.png" alt="Rajendra Madival GitFut FIFA-style developer card" class="gitfut-img" referrerPolicy="no-referrer">
+                <span class="flip-hint">
+                  <i class="fa-solid fa-rotate" aria-hidden="true"></i>
+                  Click to flip
+                </span>
+              </div>
+
+              <div class="gitfut-face gitfut-back">
+                <div class="gitfut-back-header">
+                  <div>
+                    <span class="gitfut-ovr tabular-nums">58</span>
+                    <span class="gitfut-pos">CAM</span>
+                  </div>
+                  <span class="gitfut-brand">GITFUT.COM</span>
                 </div>
 
-                
+                <div class="gitfut-back-identity">
+                  <p class="gitfut-handle">@Rajendra-Madival</p>
+                  <p class="gitfut-fullname">Rajendra Maruti Madival</p>
+                  <p class="gitfut-meta">India · JavaScript · CSE 2024–2028</p>
+                </div>
+
+                <div class="gitfut-stats-grid tabular-nums">
+                  <div class="gitfut-stat"><span>62</span> PAC</div>
+                  <div class="gitfut-stat"><span>74</span> DRI</div>
+                  <div class="gitfut-stat"><span>52</span> SHO</div>
+                  <div class="gitfut-stat"><span>49</span> DEF</div>
+                  <div class="gitfut-stat"><span>50</span> PAS</div>
+                  <div class="gitfut-stat"><span>60</span> PHY</div>
+                </div>
+
+                <p class="gitfut-stack">React · Node.js · Python · Firebase · SQL</p>
+
+                <div class="gitfut-back-actions">
+                  <a
+                    href="https://gitfut.com/Rajendra-Madival?country=in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="gitfut-ext-link"
+                  >
+                    Open GitFut Profile
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  </a>
+                  <button type="button" class="gitfut-flip-back-btn" aria-label="Flip card back to front">
+                    <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+                    Flip
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="link">
-                 <a href="https://github.com/rajendra-madival" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-square-github"></i></a>
-                <a href="https://www.linkedin.com/in/rajendra-madival-683334340/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-square-linkedin"></i></a>
-                 <a href="mailto:rajendramadival7@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://x.com/YOUR_HANDLE" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-square-x-twitter"></i></a>
-                <a href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
-</div>
-
+          </div>
         </div>
-        <div class="hero-image">
-            <a href="https://gitfut.com/Rajendra-Madival?country=in" target="main"></a>
+      </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="aboutme">About Me</h2>
+          <div class="section-rule" aria-hidden="true"></div>
         </div>
-    </div>
-    </header>
 
-    <!--About me-->
-    <p class="aboutme ">ABOUT ME</p>
-    <hr>
-    <div class="about">
-         <div class="image">
-            <img src="rajendra.jpg" alt="Rajendra Madival" class="avatar">
-            <p>I'm a Computer Science Engineering student at KLS VDIT, Haliyal, with a strong interest in web development and software engineering.
+        <div class="about">
+          <div class="about-bio">
+            <img src="/rajendra.jpg" alt="Rajendra Madival" class="avatar" referrerPolicy="no-referrer">
+            <div class="about-copy">
+              <p>
+                I'm pursuing a Bachelor of Engineering in Computer Science &amp; Engineering at KLS VDIT, Haliyal, with a CGPA of 8.92/10 and a strong focus on web development, data structures &amp; algorithms, and building products end to end.
+              </p>
+              <p>
+                I combine solid fundamentals with modern tools—from vanilla JS and IndexedDB offline PWAs to React, Node.js/Express, Flask, PostgreSQL, Firebase, and Gemini AI integrations.
+              </p>
+              <p>
+                Outside code, I enjoy playing chess to sharpen strategic thinking, writing stories, and shipping hackathon prototypes under tight deadlines.
+              </p>
+            </div>
+          </div>
 
-I enjoy turning ideas into working applications and learning by building them myself. I've worked with HTML, CSS, JavaScript and React, and I'm currently exploring backend development, SQL and Data Structures & Algorithms.
-
-I'm focused on strengthening my fundamentals, building real-world projects, and becoming a developer who can understand a problem, design a solution, and actually build it.</p>
+          <aside class="personal" aria-label="Personal Details">
+            <dl class="personal-list">
+              <div class="personal-row">
+                <dt>Location</dt>
+                <dd>Karnataka, India</dd>
+              </div>
+              <div class="personal-row">
+                <dt>Phone</dt>
+                <dd class="tabular-nums"><a href="tel:+917259114950" class="email">+91-7259114950</a></dd>
+              </div>
+              <div class="personal-row">
+                <dt>Email</dt>
+                <dd class="personal-email-cell">
+                  <a href="mailto:rajendramadival7@gmail.com" class="email">rajendramadival7@gmail.com</a>
+                  <button type="button" class="copyEmail" aria-label="Copy email address">Copy</button>
+                </dd>
+              </div>
+              <div class="personal-row">
+                <dt>Languages</dt>
+                <dd>English, Kannada, Marathi, Hindi</dd>
+              </div>
+            </dl>
+          </aside>
         </div>
-            
-            
+      </div>
+    </section>
 
-        
-        <div class="personal">
-            <ul>
-               
-                <!-- <li><pre>Date of birth     : 22 May 2006</pre> </li> -->
-                <li> <pre>Location           : Karnataka, India</pre></li>
-                <li> <pre>Email                : <a href="https://mail.google.com/mail/u/0/#inbox" target="main" class ="email">rajendramadival7@gmail.com</a> <button class="copyEmail">Copy</button></pre>  </li>
-                <li> <pre>Languages        : English, Kannada, Marathi</pre></li>
-                
-            </ul>
+    <div class="container"><hr class="spline"></div>
 
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="aboutme">Education</h2>
+          <div class="section-rule" aria-hidden="true"></div>
         </div>
-    </div>
-    <p class="spline"></p>
 
-    <!--Education-->
-    <p class="aboutme ">EDUCATION</p>
-    <hr>
-    <div class="education">
-         <div class="edu">
+        <div class="education">
+          <article class="edu card-interactive">
+            <div class="edu-top">
+              <div class="icon">
+                <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+              </div>
+              <span class="edu-period tabular-nums">2024 – 2028</span>
+            </div>
+            <h3 class="headingg">B.E. Computer Science &amp; Engineering</h3>
+            <p class="institution">KLS VDIT, Haliyal</p>
+            <div class="edu-footer">
+              <span class="edu-score-label">CGPA</span>
+              <span class="edu-score-value tabular-nums">8.92 / 10</span>
+            </div>
+          </article>
+
+          <article class="edu card-interactive">
+            <div class="edu-top">
+              <div class="icon">
+                <i class="fa-solid fa-school" aria-hidden="true"></i>
+              </div>
+              <span class="edu-period tabular-nums">2022 – 2024</span>
+            </div>
+            <h3 class="headingg">Higher Secondary (PCMB · Class XII)</h3>
+            <p class="institution">VD Hegde Indp PU College, Haliyal</p>
+            <div class="edu-footer">
+              <span class="edu-score-label">Percentage</span>
+              <span class="edu-score-value tabular-nums">92.66%</span>
+            </div>
+          </article>
+
+          <article class="edu card-interactive">
+            <div class="edu-top">
+              <div class="icon">
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+              </div>
+              <span class="edu-period tabular-nums">2022</span>
+            </div>
+            <h3 class="headingg">Secondary (SSLC · Class X)</h3>
+            <p class="institution">Swami Vivekanand High School, Haliyal</p>
+            <div class="edu-footer">
+              <span class="edu-score-label">Percentage</span>
+              <span class="edu-score-value tabular-nums">96.16%</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><hr class="spline"></div>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="aboutme">Technical Skills</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="skill">
+          <article class="skills card-interactive">
             <div class="icon">
-                <i class="fa-solid fa-graduation-cap"></i>
+              <i class="fa-solid fa-globe" aria-hidden="true"></i>
             </div>
-            <p class="headingg"> Bachelor of Engineering<br> in Computer Science</p>
-            <p class="grade"> 
-                KLS VDIT, Haliyal<br>
-                2024-2028<br>
-                CGPA: 8.92
-            </p>
-        </div>
-
-
-        <div class="edu">
-            <div class="icon">
-                <i class="fa-solid fa-school"></i>
-            </div>
-            <p class="headingg"> Higher Secondary (12th)
-            <p class="grade"> 
-                VDH PU<br>
-                2022-2024<br>
-                Grade: 92%
-            </p>
-        </div>
-
-        <div class="edu">
-                    <div class="icon">
-                        <i class="fa-solid fa-book-open"></i>
-                    </div>
-                    <p class="headingg"> Secondary (10th)
-                    <p class="grade"> 
-                        SVEM <br>
-                        2022<br>
-                        Grade: 96%
-                    </p>
-        </div>
-    </div>
-    <p class="spline"></p>>
-    <!--skills-->
-
-
-
-
-    <p class="aboutme ">SKILLS</p>
-    <hr>
-    <div class="skill">
-        <div class="skills">
-        <div class="icon">
-           <i class="fa-solid fa-laptop-code"></i>
-        </div>
-        <p class="skill-heading"> Programming Languages
-        <div class="tools">
-            <ul>
-            <li>C</li>
-            <li>C++</li>
-             <li>Python</li>
-        </ul>
-                        
-
-        </div>
-        </div>
-        <div class="skills">
-    <div class="icon">
-            <i class="fa-brands fa-edge"></i>
-        </div>
-        <p class="skill-heading"> Web Technologies
-        <div class="tools">
-            <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-        </ul>
-                       </div> 
-
-        </div>
-    <div class="skills">
-        <div class="icon">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-        </div>
-        <p class="skill-heading"> Tools & Platforms
-        <div class="tools">
-            <ul>
-            <li>Git</li>
-            <li>GitHub</li>
-             <li>VS Code</li>
-        </ul>
-                        
-
-        </div>
-        </div>
-
-    <div class="skills">
-        <div class="icon">
-            <i class="fa-solid fa-database"></i>
-        </div>
-        <p class="skill-heading"> Databases
-        <div class="tools">
-            <ul>
-            <li>MySQL</li>
-            <li>MongoDB</li>
-        </ul>
-        
-                        
-</div>
-        </div>
-
-<div class="skills">
-        <div class="icon">
-            <i class="fa-brands fa-android"></i>
-        </div>
-        <p class="skill-heading"> Soft Skills
-        <div class="tools">
-            <ul>
-            <li>Problem Solving</li>
-            <li>Communication</li>
-             <li>Teamwork</li>
-             <li>Time Management</li>
-        </ul>
-                        
-
-        </div>
-    </div>
-    </div>
-</div>
-    <p class="spline"></p>
-    <!--Projects-->
-    <p class="aboutme ">PROJECTS</p>
-    <hr>
-    <div class="project">
-        <div class="proj">
-        <div class="proj-img"></div>
-        <div class="proj-content">
-            <h3>Amazon-Clone</h3>
-            <p>A front-end clone of the Amazon <br>homepage using HTML and CSS.</p>
-            <div class="proj-tool">
-                <p class="t1">HTML</p>
-                <p class="t2">CSS</p>
-
-            </div>
-            <a href="#">View Project <i class="fa-solid fa-arrow-right-long"></i></a>
-        </div>
-        </div>
-
-       <div class="proj">
-        <div class="proj-img"></div>
-        <div class="proj-content">
-            <h3>Portfolio-Website</h3>
-            <p>A personal portfolio website to <br>showcase my skills and projects.</p>
-            <div class="proj-tool">
-                <p class="t1">HTML</p>
-                <p class="t2">CSS</p>
-
-            </div>
-            <a href="#">View Project <i class="fa-solid fa-arrow-right-long"></i></a>
-        </div>
-        </div>
-
-
-        <div class="proj">
-        <div class="proj-img"></div>
-        <div class="proj-content">
-            <h3>Rock-Paper-Scissors</h3>
-            <p>A Rock Paper Scissors game <br>using HTML, CSS & JavaScript.</p>
-            <div class="proj-tool">
-                <p class="t1">HTML</p>
-                <p class="t2">CSS</p>
-                <p class="t3">JavaScript</p>
-
-            </div>
-            <a href="#">View Project <i class="fa-solid fa-arrow-right-long"></i></a>
-        </div>
-        </div>
-
-        <div class="proj">
-        <div class="proj-img"></div>
-        <div class="proj-content">
-            <h3>Amazon-Clone</h3>
-            <p>A front-end clone of the Amazon <br>homepage using HTML and CSS.</p>
-            <div class="proj-tool">
-                <p class="t1">HTML</p>
-                <p class="t2">CSS</p>
-
-            </div>
-            <a href="#">View Project <i class="fa-solid fa-arrow-right-long"></i></a>
-        </div>
-        </div>
-    </div>
-
-    <p class="spline"></p>>
-    <!--Experience-->
-    <!-- <p class="aboutme ">EXPERIENCE</p>
-    <hr> -->
-    <!-- <p class="spline"></p> -->
-    <!--Certification-->
-    <!-- <p class="aboutme ">CERTIFICATION</p>
-     <hr>
-    <p class="spline"></p> -->
-    <!--Achievements-->
-    <p class="aboutme ">ACHIEVEMENTS</p>
-         <hr>
-         <div class="achievement">
-            <div class="ach">
-                <i class="fa-solid fa-seedling icon"></i><p>Participated in a national-level hackathon.</p>
-
-            </div>
-            <div class="ach">
-                <i class="fa-solid fa-award icon"></i><p>Participated in 4 hackathons.</p>
-
-            </div>
-            <div class="ach">
-                <i class="fa-solid fa-code icon"></i><p>Active in the coding club.</p>
-
-            </div>
-            <div class="ach">
-                <i class="fa-brands fa-leetcode icon"></i> <p> Solved 10 problems on LeetCode.</p>
-            </div>
-         </div>
-        <p class="spline"></p>
-    <!--Contact Me-->
-    <p class="aboutme ">CONTACT ME</p>
-    <hr>
-    <div class="contact-main">
-        <div class="contact-info">
-            <ul>
-            <li><i class="fa-solid fa-envelope"></i> <a href="https://mail.google.com/mail/u/0/#inbox" target="main" class="email">rajendramadival7@gmail.com</a> <button class="copyEmail">Copy</button> </li>
-            <li><i class="fa-solid fa-location-dot"></i> Karnataka, India.</li>
-            <li><i class="fa-brands fa-square-github"></i> <a href="https://github.com/rajendra-madival" target="main"> Rajendra-Madival</a></li>
-            <li><i class="fa-brands fa-square-linkedin"></i><a href="https://www.linkedin.com/in/rajendra-madival-683334340/" target="main">Rajendra Madival</a></li>
+            <h3 class="skill-heading">Frontend</h3>
+            <ul class="tools">
+              <li>HTML5, CSS &amp; Tailwind CSS</li>
+              <li>JavaScript (ES6+) &amp; React</li>
+              <li>Figma &amp; DOM Manipulation</li>
             </ul>
+          </article>
+
+          <article class="skills card-interactive">
+            <div class="icon">
+              <i class="fa-solid fa-server" aria-hidden="true"></i>
+            </div>
+            <h3 class="skill-heading">Backend &amp; APIs</h3>
+            <ul class="tools">
+              <li>Node.js &amp; Express.js</li>
+              <li>REST APIs &amp; Gemini API</li>
+              <li>Firebase (Auth, Firestore)</li>
+            </ul>
+          </article>
+
+          <article class="skills card-interactive">
+            <div class="icon">
+              <i class="fa-solid fa-database" aria-hidden="true"></i>
+            </div>
+            <h3 class="skill-heading">Languages &amp; Data</h3>
+            <ul class="tools">
+              <li>C++ &amp; Python</li>
+              <li>PostgreSQL &amp; MySQL</li>
+              <li>IndexedDB</li>
+            </ul>
+          </article>
+
+          <article class="skills card-interactive">
+            <div class="icon">
+              <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+            </div>
+            <h3 class="skill-heading">Tools &amp; Core CS</h3>
+            <ul class="tools">
+              <li>Git, GitHub, Postman, Vercel</li>
+              <li>Data Structures &amp; Algorithms</li>
+              <li>Operating Systems &amp; OOP</li>
+            </ul>
+          </article>
         </div>
-        <div class="contact-box">
+      </div>
+    </section>
+
+    <div class="container"><hr class="spline"></div>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="aboutme">Projects</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="project-filters" role="tablist" aria-label="Filter projects by category">
+          <button type="button" class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All Projects (6)</button>
+          <button type="button" class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web &amp; Full-Stack</button>
+          <button type="button" class="filter-btn" data-filter="hackathon" role="tab" aria-selected="false">Python &amp; Hackathons</button>
+        </div>
+
+        <div class="project" id="projectGrid">
+          <!-- 1. GymKhanna -->
+          <article class="proj card-interactive" data-category="web">
+            <div class="proj-img">
+              <img
+                src="/src/assets/images/thumb_gymkhanna_1794570628206.jpg"
+                alt="GymKhanna fitness-tracking PWA dashboard thumbnail"
+                class="proj-thumb"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              >
+            </div>
+            <div class="proj-content">
+              <h3>GymKhanna</h3>
+              <p>Installable fitness-tracking PWA with workout logging, Gemini AI coaching, nutrition tracking, barcode scanner, and Firebase sync.</p>
+              <p class="proj-meta">HTML · CSS · Vanilla JS · Firebase · Gemini API · IndexedDB</p>
+              <div class="proj-footer-actions">
+                <button type="button" class="proj-link-btn" data-project="gymkhanna">
+                  Details <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                </button>
+                <div class="proj-ext-links">
+                  <a href="https://gym-khanna.vercel.app" target="_blank" rel="noopener noreferrer" class="proj-ext-link">Live Demo</a>
+                  <a href="https://github.com/Rajendra-Madival/GYM_KHANNA" target="_blank" rel="noopener noreferrer" class="proj-ext-link">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. PaperZero -->
+          <article class="proj card-interactive" data-category="hackathon">
+            <div class="proj-img">
+              <img
+                src="/src/assets/images/thumb_paperzero_1794570628141.jpg"
+                alt="PaperZero college ERP dashboard thumbnail"
+                class="proj-thumb"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              >
+            </div>
+            <div class="proj-content">
+              <h3>PaperZero</h3>
+              <p>Paper-reduction college ERP built at Hack Fusion with role-based portals for students, teachers, and management plus approval workflows.</p>
+              <p class="proj-meta">Python · Flask · SQLAlchemy · Flask-Login · Hack Fusion</p>
+              <div class="proj-footer-actions">
+                <button type="button" class="proj-link-btn" data-project="paperzero">
+                  Details <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                </button>
+                <div class="proj-ext-links">
+                  <a href="https://github.com/Rajendra-Madival/PaperZero" target="_blank" rel="noopener noreferrer" class="proj-ext-link">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. FINFLOW -->
+          <article class="proj card-interactive" data-category="hackathon">
+            <div class="proj-img">
+              <img
+                src="/src/assets/images/thumb_finflow_1794570628345.jpg"
+                alt="FINFLOW GST invoice OCR and tax dashboard thumbnail"
+                class="proj-thumb"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              >
+            </div>
+            <div class="proj-content">
+              <h3>FINFLOW</h3>
+              <p>Automated GST sales &amp; purchase register built at Wave Hackathon. Scans invoices with OCR, validates GSTINs, and generates GSTR reports.</p>
+              <p class="proj-meta">Python · Streamlit · Pytesseract OCR · Pandas · PyMuPDF</p>
+              <div class="proj-footer-actions">
+                <button type="button" class="proj-link-btn" data-project="finflow">
+                  Details <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                </button>
+                <div class="proj-ext-links">
+                  <a href="https://github.com/Rajendra-Madival/FINFLOW-FINAL" target="_blank" rel="noopener noreferrer" class="proj-ext-link">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Namma Kannada -->
+          <article class="proj card-interactive" data-category="web">
+            <div class="proj-img">
+              <img
+                src="/src/assets/images/thumb_namma_kannada_1794570628924.jpg"
+                alt="Namma Kannada interactive language learning web app thumbnail"
+                class="proj-thumb"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              >
+            </div>
+            <div class="proj-content">
+              <h3>Namma Kannada</h3>
+              <p>Interactive web platform deployed on Vercel designed to make learning Kannada letters, vocabulary, and everyday phrases approachable.</p>
+              <p class="proj-meta">JavaScript · Web App · Vercel</p>
+              <div class="proj-footer-actions">
+                <button type="button" class="proj-link-btn" data-project="namma">
+                  Details <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                </button>
+                <div class="proj-ext-links">
+                  <a href="https://namma-kannada-three.vercel.app" target="_blank" rel="noopener noreferrer" class="proj-ext-link">Live Demo</a>
+                  <a href="https://github.com/Rajendra-Madival/Namma-Kannada" target="_blank" rel="noopener noreferrer" class="proj-ext-link">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Partha -->
+          <article class="proj card-interactive" data-category="web">
+            <div class="proj-img">
+              <img
+                src="/src/assets/images/thumb_partha_1794570630536.jpg"
+                alt="Partha student alumni mentorship platform thumbnail"
+                class="proj-thumb"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              >
+            </div>
+            <div class="proj-content">
+              <h3>Partha</h3>
+              <p>A student-focused alumni platform for experience-based discovery, mentorship connections, and real career opportunity sharing.</p>
+              <p class="proj-meta">Web Platform · Mentorship · Alumni Network</p>
+              <div class="proj-footer-actions">
+                <button type="button" class="proj-link-btn" data-project="partha">
+                  Details <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                </button>
+                <div class="proj-ext-links">
+                  <a href="https://github.com/Rajendra-Madival/Partha" target="_blank" rel="noopener noreferrer" class="proj-ext-link">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Todo using PERN -->
+          <article class="proj card-interactive" data-category="web">
+            <div class="proj-img">
+              <img
+                src="/src/assets/images/thumb_pern_todo_1794570629183.jpg"
+                alt="Full-stack PERN Todo task management app thumbnail"
+                class="proj-thumb"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              >
+            </div>
+            <div class="proj-content">
+              <h3>Todo using PERN</h3>
+              <p>A full-stack task management application built on the PERN stack featuring persistent PostgreSQL storage and full CRUD operations.</p>
+              <p class="proj-meta">PostgreSQL · Express · React · Node.js</p>
+              <div class="proj-footer-actions">
+                <button type="button" class="proj-link-btn" data-project="pern">
+                  Details <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                </button>
+                <div class="proj-ext-links">
+                  <a href="https://github.com/Rajendra-Madival/Todo-using-PERN" target="_blank" rel="noopener noreferrer" class="proj-ext-link">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><hr class="spline"></div>
+
+    <!-- Achievements & Certificates -->
+    <section id="achievements" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="aboutme">Achievements &amp; Certificates</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="achievement">
+          <article class="ach card-interactive">
+            <div class="ach-icon">
+              <i class="fa-solid fa-award" aria-hidden="true"></i>
+            </div>
+            <p>Participated in 4 hackathons including Hack Fusion &amp; Wave Hackathon.</p>
+          </article>
+
+          <article class="ach card-interactive">
+            <div class="ach-icon">
+              <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+            </div>
+            <p>Completed AI Internship at FlyRank.</p>
+          </article>
+
+          <article class="ach card-interactive">
+            <div class="ach-icon">
+              <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+            </div>
+            <p>Certified in Prompt Engineering &amp; Introduction to Generative AI.</p>
+          </article>
+
+          <article class="ach card-interactive">
+            <div class="ach-icon">
+              <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+            </div>
+            <p>Active coding club member &amp; LeetCode problem solver.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><hr class="spline"></div>
+
+    <!-- Contact Me -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="aboutme">Contact Me</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="contact-main">
+          <div class="contact-info">
+            <h3 class="contact-lead">Let's connect</h3>
+            <p class="contact-sub">Reach out for internships, hackathon collaborations, or software engineering projects.</p>
+            <ul>
+              <li>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <a href="mailto:rajendramadival7@gmail.com" class="email">rajendramadival7@gmail.com</a>
+                <button type="button" class="copyEmail" aria-label="Copy email address">Copy</button>
+              </li>
+              <li>
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <a href="tel:+917259114950" class="tabular-nums">+91-7259114950</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <span>Karnataka, India</span>
+              </li>
+              <li>
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                <a href="https://github.com/Rajendra-Madival" target="_blank" rel="noopener noreferrer">github.com/Rajendra-Madival</a>
+              </li>
+              <li>
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                <a href="https://www.linkedin.com/in/rajendra-madival-683334340/" target="_blank" rel="noopener noreferrer">LinkedIn — Rajendra Madival</a>
+              </li>
+            </ul>
+          </div>
+
+          <form id="contactForm" class="contact-box" novalidate>
             <div class="namemail">
-                <input placeholder="Your Name" type="text" id="namem">
-                <input placeholder="Your Email" type="email" id="mail">
+              <div class="field">
+                <label for="namem">Your Name</label>
+                <input placeholder="Jane Doe" type="text" id="namem" name="name" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="mail">Your Email</label>
+                <input placeholder="jane@example.com" type="email" id="mail" name="email" required autocomplete="email">
+              </div>
             </div>
-            <br> 
-            <div class="sub">
-                <input placeholder="Subject" type="text">
-            </div>
-            <br> 
-            <div class="mailmessage">
-                <textarea placeholder="Your Message"></textarea>
-            </div>
-        </div>
-        </div>
-    <div class="conbutton">
-            <button type="submit" id="submit">Send Message</button>
-    </div>
-    <p class="spline"></p>
-    <button id="backToTop">Top</button>
-    
-    <footer>
-    <div class="bottom-navbar">
-        <!-- <div class="link">
-                <a href="https://github.com/Rajendra7250" target="main"><i class="fa-brands fa-square-github"></i></a>
-                <a href="https://www.linkedin.com/in/rajendra-madival-683334340/" target="main"><i class="fa-brands fa-square-linkedin"></i></a>
-                <a href="https://github.com/Rajendra7250" target="main"><i class="fa-brands fa-square-twitter"></i></a>
-                <a href="https://github.com/Rajendra7250" target="main"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://github.com/Rajendra7250" target="main"><i class="fa-brands fa-square-instagram"></i></a>
-            </div> -->
 
-        <p>&#169 2026 Rajendra Madival. All rights reserved.</p>
+            <div class="field sub">
+              <label for="subject">Subject</label>
+              <input placeholder="Project inquiry or collaboration" type="text" id="subject" name="subject" required>
+            </div>
+
+            <div class="field mailmessage">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
+            </div>
+
+            <div class="conbutton">
+              <button type="submit" id="submit" class="btn-primary">Send Message</button>
+              <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container bottom-navbar">
+      <p>&#169; 2026 Rajendra Maruti Madival. All rights reserved.</p>
+      <button id="backToTop" type="button" aria-label="Scroll back to top">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        <span>Top</span>
+      </button>
     </div>
-    </footer>
-    <script type="module" src="/src/main.ts"></script>
+  </footer>
+
+  <!-- Project Detail Modal -->
+  <div id="projectModal" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle">Project Title</h3>
+        <button type="button" id="closeProjectModal" class="modal-close" aria-label="Close project details">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <img id="modalThumb" src="" alt="" class="modal-thumb" hidden referrerPolicy="no-referrer">
+      <p id="modalTech" class="modal-tech"></p>
+      <p id="modalDesc" class="modal-desc"></p>
+      <ul id="modalHighlights" class="modal-highlights"></ul>
+      <div class="modal-actions">
+        <a id="modalLiveLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" hidden>
+          Live Demo
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+        <a id="modalRepoLink" href="https://github.com/Rajendra-Madival" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          View on GitHub
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+        <button type="button" id="modalCloseSecondary" class="btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resume Modal -->
+  <div id="resumeModal" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">
+    <div class="modal-card modal-card-wide">
+      <div class="modal-header">
+        <h3 id="resumeModalTitle">Rajendra Maruti Madival — Resume</h3>
+        <button type="button" id="closeResumeModal" class="modal-close" aria-label="Close resume">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="resume-tabs" role="tablist" aria-label="Resume view mode">
+        <button type="button" id="resumeTabPdf" class="filter-btn is-active" role="tab" aria-selected="true">Original PDF</button>
+        <button type="button" id="resumeTabSummary" class="filter-btn" role="tab" aria-selected="false">Structured Summary</button>
+      </div>
+
+      <div id="resumePdfPane" class="resume-pdf-pane">
+        <iframe
+          src="/assets/aistudio/Resume__0506a0fb.pdf"
+          title="Rajendra Maruti Madival Resume PDF"
+          class="resume-iframe"
+        ></iframe>
+      </div>
+
+      <div id="resumeSummaryPane" class="resume-preview" hidden>
+        <p class="resume-meta tabular-nums">+91-7259114950 · rajendramadival7@gmail.com · github.com/Rajendra-Madival</p>
+        <div class="resume-block">
+          <h4>Education</h4>
+          <p class="tabular-nums"><strong>B.E. Computer Science &amp; Engineering</strong> — KLS VDIT, Haliyal (Sep 2024 – May 2028) · CGPA: 8.92/10</p>
+          <p class="tabular-nums"><strong>PCMB (Class XII)</strong> — VD Hegde Indp PU College, Haliyal (2022–2024) · 92.66% · 3rd Rank</p>
+          <p class="tabular-nums"><strong>SSLC (Class X)</strong> — Swami Vivekanand High School, Haliyal (May 2022) · 96.16%</p>
+        </div>
+        <div class="resume-block">
+          <h4>Technical Skills</h4>
+          <p><strong>Frontend:</strong> HTML5, CSS, Tailwind CSS, JavaScript (ES6+), React, Figma, DOM Manipulation</p>
+          <p><strong>APIs &amp; Data:</strong> REST APIs, Firebase (Auth, Firestore), IndexedDB, Gemini API, PostgreSQL, MySQL</p>
+          <p><strong>Languages &amp; Backend:</strong> C++, Python, Node.js, Express.js</p>
+          <p><strong>Tools &amp; Core CS:</strong> Git, GitHub, Postman, Vercel, DSA, Operating Systems, OOP, LeetCode</p>
+        </div>
+        <div class="resume-block">
+          <h4>Technical Projects</h4>
+          <p><strong>GymKhanna:</strong> Installable fitness PWA with AI coach, nutrition tracker &amp; Firebase sync (Vercel live).</p>
+          <p><strong>PaperZero:</strong> Multi-role college ERP with approval workflows &amp; Flask Blueprints (Hack Fusion).</p>
+          <p><strong>FINFLOW:</strong> OCR-powered GST invoice register generating GSTR-1/3B/2A reports (Wave Hackathon).</p>
+        </div>
+        <div class="resume-block">
+          <h4>Certificates &amp; Interests</h4>
+          <p>Prompt Engineering · Introduction to Generative AI · Chess · Story Writing · Hackathons</p>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <a href="/assets/aistudio/Resume__0506a0fb.pdf" download="Rajendra_Maruti_Madival_Resume.pdf" class="btn-primary">
+          <i class="fa-solid fa-download" aria-hidden="true"></i>
+          Download PDF
+        </a>
+        <a href="/assets/aistudio/Resume__0506a0fb.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          Open in New Tab
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+        <button type="button" id="closeResumeSecondary" class="btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
