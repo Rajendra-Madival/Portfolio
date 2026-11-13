@@ -401,16 +401,31 @@ contactForm?.addEventListener("submit", async (event) => {
   const subject = subjectInput?.value.trim() ?? "";
   const message = messageInput?.value.trim() ?? "";
 
-  if (!name || !email || !subject || !message) {
-    formStatus.textContent = "Please fill in all fields before sending.";
+  if (!name) {
+    formStatus.textContent = "Please enter your name.";
     formStatus.classList.add("is-error");
+    nameInput?.focus();
     return;
   }
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     formStatus.textContent = "Please enter a valid email address.";
     formStatus.classList.add("is-error");
     emailInput?.focus();
+    return;
+  }
+
+  if (!subject) {
+    formStatus.textContent = "Please enter a subject.";
+    formStatus.classList.add("is-error");
+    subjectInput?.focus();
+    return;
+  }
+
+  if (!message) {
+    formStatus.textContent = "Please write a message before sending.";
+    formStatus.classList.add("is-error");
+    messageInput?.focus();
     return;
   }
 
@@ -426,17 +441,44 @@ contactForm?.addEventListener("submit", async (event) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, subject, message }),
     });
-    const payload = await response.json();
 
-    if (!response.ok || !payload.ok) {
-      throw new Error(payload.error || "Unable to send message right now.");
+    const contentType = response.headers.get("content-type") ?? "";
+    if (contentType.includes("application/json")) {
+      const payload = await response.json();
+      if (!response.ok || !payload.ok) {
+        throw new Error(payload.error || "Unable to send message right now.");
+      }
+      formStatus.textContent = payload.message || `Thanks ${name}! Your message has been sent.`;
+      contactForm.reset();
+      return;
     }
 
-    formStatus.textContent = payload.message || `Thanks ${name}! Your message has been received.`;
+    // Fallback for static deployments without /api/contact backend
+    const fallbackRes = await fetch("https://formsubmit.co/ajax/rajendramadival7@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        _subject: `[Portfolio] ${subject}`,
+        message,
+        _replyto: email,
+      }),
+    });
+
+    const fallbackJson = await fallbackRes.json().catch(() => null);
+    if (!fallbackRes.ok) {
+      throw new Error(fallbackJson?.message || "Unable to send message right now.");
+    }
+
+    formStatus.textContent = `Thanks ${name}! Your message has been sent.`;
     contactForm.reset();
   } catch (err) {
     formStatus.classList.add("is-error");
-    formStatus.textContent = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+    formStatus.textContent = err instanceof Error ? err.message : "Something went wrong. Please email rajendramadival7@gmail.com directly.";
   } finally {
     submitButton.disabled = false;
     submitButton.textContent = originalLabel;

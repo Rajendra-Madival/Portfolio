@@ -93,11 +93,52 @@ async function createApp() {
       }).catch(() => {});
     }
 
+    let delivered = false;
+    let needsActivation = false;
+    try {
+      const origin = typeof req.headers.origin === "string"
+        ? req.headers.origin
+        : `https://${req.headers.host || "localhost"}`;
+      const fsRes = await fetch("https://formsubmit.co/ajax/rajendramadival7@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Origin: origin,
+          Referer: origin,
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          _subject: `[Portfolio] ${subject}`,
+          message,
+          _replyto: email,
+          _template: "table",
+        }),
+      });
+      const fsJson = (await fsRes.json().catch(() => null)) as { success?: string | boolean; message?: string } | null;
+      if (fsRes.ok && (fsJson?.success === true || fsJson?.success === "true")) {
+        delivered = true;
+      } else if (typeof fsJson?.message === "string" && fsJson.message.toLowerCase().includes("activat")) {
+        needsActivation = true;
+      }
+    } catch {
+      // Network error forwarding to FormSubmit; local submission is still persisted
+    }
+
+    const responseMessage = delivered
+      ? `Message sent successfully! Thanks ${name} (Ref #${entry.id}).`
+      : needsActivation
+        ? `Message saved (Ref #${entry.id}). One-time setup: check rajendramadival7@gmail.com and click "Activate Form" from FormSubmit to receive future emails.`
+        : `Thanks ${name}! Your message has been recorded (Ref #${entry.id}).`;
+
     res.status(201).json({
       ok: true,
       id: entry.id,
       submittedAt: entry.submittedAt,
-      message: `Thanks ${name}! Your message has been received (Ref #${entry.id}).`,
+      delivered,
+      needsActivation,
+      message: responseMessage,
     });
   });
 
