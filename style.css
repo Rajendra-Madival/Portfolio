@@ -59,7 +59,7 @@ body{
 
 }
 body:hover {
-    cursor: url("cursor-32.png"), pointer;
+    cursor: url("/cursor-32.png"), pointer;
 }
 
 button, input, textarea, pre {
@@ -246,7 +246,7 @@ p{
 }
 
 .hero-image a {
-    background-image: url("gitfut.png");
+    background-image: url("/gitfut.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
