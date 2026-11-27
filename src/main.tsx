@@ -254,9 +254,170 @@ copyButtons.forEach((button) => {
   });
 });
 
-/* Project Category Filter */
+/* Project Carousel & Category Filter */
+const projectTrack = document.querySelector<HTMLElement>("#projectGrid");
 const filterButtons = document.querySelectorAll<HTMLButtonElement>(".project-filters .filter-btn");
-const projectCards = document.querySelectorAll<HTMLElement>("#projectGrid .proj");
+const projectCards = Array.from(document.querySelectorAll<HTMLElement>("#projectGrid .proj"));
+const carouselPrev = document.querySelector<HTMLButtonElement>("#carouselPrev");
+const carouselNext = document.querySelector<HTMLButtonElement>("#carouselNext");
+const carouselDots = document.querySelector<HTMLElement>("#carouselDots");
+
+const getVisibleCards = (): HTMLElement[] => projectCards.filter((card) => !card.hidden);
+
+const getStepWidth = (): number => {
+  const visible = getVisibleCards();
+  if (visible.length === 0 || !projectTrack) return 320;
+  const firstCard = visible[0];
+  const gap = Number.parseFloat(getComputedStyle(projectTrack).columnGap || getComputedStyle(projectTrack).gap || "24") || 24;
+  return firstCard.getBoundingClientRect().width + gap;
+};
+
+const syncCarouselUI = (): void => {
+  if (!projectTrack) return;
+  const visible = getVisibleCards();
+  const maxScroll = Math.max(0, projectTrack.scrollWidth - projectTrack.clientWidth);
+  const currentScroll = projectTrack.scrollLeft;
+
+  if (carouselPrev) {
+    carouselPrev.disabled = currentScroll <= 4;
+  }
+  if (carouselNext) {
+    carouselNext.disabled = maxScroll <= 4 || currentScroll >= maxScroll - 4;
+  }
+
+  if (!carouselDots || visible.length === 0) return;
+  const step = getStepWidth();
+  let activeIndex = Math.round(currentScroll / Math.max(1, step));
+  if (currentScroll >= maxScroll - 4 && maxScroll > 4) {
+    activeIndex = visible.length - 1;
+  }
+  activeIndex = Math.max(0, Math.min(visible.length - 1, activeIndex));
+
+  const dots = carouselDots.querySelectorAll<HTMLButtonElement>(".carousel-dot");
+  dots.forEach((dot, idx) => {
+    const isActive = idx === activeIndex;
+    dot.classList.toggle("is-active", isActive);
+    dot.setAttribute("aria-selected", String(isActive));
+  });
+};
+
+const buildCarouselDots = (): void => {
+  if (!carouselDots || !projectTrack) return;
+  const visible = getVisibleCards();
+  carouselDots.replaceChildren(
+    ...visible.map((card, idx) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "carousel-dot";
+      const title = card.querySelector("h3")?.textContent?.trim() || `Project ${idx + 1}`;
+      dot.setAttribute("role", "tab");
+      dot.setAttribute("aria-label", `Go to ${title}`);
+      dot.setAttribute("aria-selected", idx === 0 ? "true" : "false");
+      dot.addEventListener("click", () => {
+        const targetLeft = idx === visible.length - 1
+          ? Math.max(0, projectTrack.scrollWidth - projectTrack.clientWidth)
+          : idx * getStepWidth();
+        projectTrack.scrollTo({
+          left: targetLeft,
+          behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+        });
+      });
+      return dot;
+    }),
+  );
+  syncCarouselUI();
+};
+
+carouselPrev?.addEventListener("click", () => {
+  if (!projectTrack) return;
+  projectTrack.scrollBy({
+    left: -getStepWidth(),
+    behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+  });
+});
+
+carouselNext?.addEventListener("click", () => {
+  if (!projectTrack) return;
+  projectTrack.scrollBy({
+    left: getStepWidth(),
+    behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+  });
+});
+
+projectTrack?.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    projectTrack.scrollBy({
+      left: -getStepWidth(),
+      behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+    });
+  } else if (event.key === "ArrowRight") {
+    event.preventDefault();
+    projectTrack.scrollBy({
+      left: getStepWidth(),
+      behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+    });
+  }
+});
+
+let scrollRaf = 0;
+projectTrack?.addEventListener("scroll", () => {
+  if (scrollRaf) return;
+  scrollRaf = window.requestAnimationFrame(() => {
+    scrollRaf = 0;
+    syncCarouselUI();
+  });
+});
+
+window.addEventListener("resize", () => {
+  syncCarouselUI();
+});
+
+/* Desktop Mouse Drag-to-Scroll on Carousel */
+let isPointerDown = false;
+let dragMoved = false;
+let dragStartX = 0;
+let dragStartScrollLeft = 0;
+
+projectTrack?.addEventListener("pointerdown", (event) => {
+  if (event.pointerType !== "mouse" || event.button !== 0) return;
+  const target = event.target as HTMLElement | null;
+  if (target?.closest("button, a")) return;
+  isPointerDown = true;
+  dragMoved = false;
+  dragStartX = event.clientX;
+  dragStartScrollLeft = projectTrack.scrollLeft;
+  projectTrack.classList.add("is-dragging");
+});
+
+window.addEventListener("pointermove", (event) => {
+  if (!isPointerDown || !projectTrack) return;
+  const deltaX = event.clientX - dragStartX;
+  if (Math.abs(deltaX) > 5) dragMoved = true;
+  projectTrack.scrollLeft = dragStartScrollLeft - deltaX;
+});
+
+const endCarouselDrag = (): void => {
+  if (!isPointerDown || !projectTrack) return;
+  isPointerDown = false;
+  projectTrack.classList.remove("is-dragging");
+  syncCarouselUI();
+};
+
+window.addEventListener("pointerup", endCarouselDrag);
+window.addEventListener("pointercancel", endCarouselDrag);
+
+projectTrack?.addEventListener(
+  "click",
+  (event) => {
+    if (dragMoved) {
+      event.preventDefault();
+      event.stopPropagation();
+      dragMoved = false;
+    }
+  },
+  true,
+);
 
 filterButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -272,8 +433,15 @@ filterButtons.forEach((btn) => {
       const visible = selected === "all" || category === selected;
       card.hidden = !visible;
     });
+
+    if (projectTrack) {
+      projectTrack.scrollTo({ left: 0, behavior: "auto" });
+    }
+    buildCarouselDots();
   });
 });
+
+buildCarouselDots();
 
 /* Project Detail Modal */
 const projectModal = document.querySelector<HTMLElement>("#projectModal");

@@ -165,7 +165,7 @@
 
         <div class="about">
           <div class="about-bio">
-            <img src="/rajendra.jpg" alt="Rajendra Madival" class="avatar" referrerPolicy="no-referrer">
+            <img src="/assets/aistudio/IMG20261118130028_c2f2a0b1.jpg" alt="Rajendra Madival" class="avatar" referrerPolicy="no-referrer">
             <div class="about-copy">
               <p>
                 I'm pursuing a Bachelor of Engineering in Computer Science &amp; Engineering at KLS VDIT, Haliyal, with a CGPA of 8.92/10 and a strong focus on web development, data structures &amp; algorithms, and building products end to end.
@@ -339,7 +339,15 @@
           <button type="button" class="filter-btn" data-filter="hackathon" role="tab" aria-selected="false">Python &amp; Hackathons</button>
         </div>
 
-        <div class="project" id="projectGrid">
+        <div class="project-carousel-wrapper">
+          <div
+            class="project"
+            id="projectGrid"
+            tabindex="0"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Projects showcase"
+          >
           <!-- 1. GymKhanna -->
           <article class="proj card-interactive" data-category="web">
             <div class="proj-img">
@@ -497,6 +505,29 @@
               </div>
             </div>
           </article>
+        </div>
+
+          <div class="project-carousel-controls">
+            <button
+              type="button"
+              id="carouselPrev"
+              class="carousel-nav-btn"
+              aria-label="Previous project"
+            >
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+
+            <div id="carouselDots" class="carousel-dots" role="tablist" aria-label="Select project slide"></div>
+
+            <button
+              type="button"
+              id="carouselNext"
+              class="carousel-nav-btn"
+              aria-label="Next project"
+            >
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -711,6 +742,6 @@
     </div>
   </div>
 
-  <script type="module" src="/src/main.ts"></script>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
